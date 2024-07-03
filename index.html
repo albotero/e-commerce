@@ -7,13 +7,18 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
   <body>
-    <header class="header">Mi e-Commerce</header>
     <aside class="categorias">
       <h2>Categorías</h2>
       <div class="list-categorias"></div>
     </aside>
     <main class="productos"></main>
     <footer class="footer">Alejandro Botero. 2024 ®</footer>
+    <!--
+    Header is last to allow its shadow to be on top of the categories list and products div
+    Not using z-index because it is not absoluted positioned
+    Position in top of the page will be set by grid-template-areas
+    -->
+    <header class="header">Mi e-Commerce</header>
     <script src="./assets/js/populate-products.js" type="module"></script>
   </body>
 </html>

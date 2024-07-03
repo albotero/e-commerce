@@ -1,14 +1,14 @@
 :root {
   --bg-primary: #cbcdcf;
   --bg-secondary: #e6e9ee;
-  --bg-tertiary: #6d6d71;
-  --bg-highlight: #2b4580;
+  --bg-tertiary: #918d82;
+  --bg-highlight: #a07d1f;
   --fc-light: #f0f1f4;
-  --fc-medium: #8a8a8a;
+  --fc-medium: #807e7e;
   --fc-dark: #000;
-  --fs-xl: 2.2rem;
-  --fs-lg: 1.8rem;
-  --fs-md: 1.4rem;
+  --fs-xl: 2rem;
+  --fs-lg: 1.7rem;
+  --fs-md: 1.3rem;
   --fs-sm: 1rem;
 }
 
@@ -21,7 +21,7 @@ body {
   height: 100vh;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: max-content 1fr;
   grid-template-rows: min-content 1fr min-content;
   grid-template-areas:
     "header header"
@@ -36,6 +36,7 @@ body {
   font-size: var(--fs-xl);
   text-align: center;
   padding: 1.5rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.65);
 }
 
 .categorias {
@@ -59,6 +60,52 @@ body {
 
 .productos {
   grid-area: productos;
+  overflow-y: scroll;
+  padding: 1.5rem 3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(8, max-content);
+  gap: 1.5rem 1rem;
+}
+
+.product-card {
+  background-color: var(--bg-secondary);
+  border-radius: 0.3rem;
+  box-shadow: 1px 1px 4px var(--bg-tertiary);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto) 1fr auto;
+  gap: 0.5rem;
+}
+
+.product-card p {
+  margin: 0;
+  text-align: center;
+}
+
+.product-image {
+  width: 100%;
+}
+
+.product-title {
+  padding: 0 1rem;
+}
+
+.product-price {
+  color: var(--fc-medium);
+  font-size: var(--fs-sm);
+}
+
+.product-buy {
+  width: 100%;
+  background-color: var(--bg-highlight);
+  font-size: var(--fs-sm);
+  color: var(--fc-light);
+  cursor: pointer;
+  padding: 0.75rem;
+  border: none;
+  border-top: 1px solid var(--fc-medium);
 }
 
 .footer {

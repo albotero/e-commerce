@@ -11,4 +11,19 @@ const populateListCategorias = () => {
     .join("")
 }
 
-populateListCategorias()
+const populateProductos = () => {
+  productosDiv.innerHTML = PRODUCTS.map(
+    ({ id, title, price, img }) => `
+      <div class="product-card">
+        <img src="./assets/img/${img}" alt="${title}" class="product-image" />
+        <p class="product-title">${title}</p>
+        <p class="product-price">COP$ ${price.toLocaleString()}</p>
+        <button class="product-buy" onclick="alert('COMPRADO:\\n${title}')" value="${id}">Comprar</button>
+      </div>`
+  ).join("")
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  populateListCategorias()
+  populateProductos()
+})
