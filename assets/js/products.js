@@ -1,7 +1,7 @@
 // Products from falabella.com.co
 // Prices in COP
 
-export const CATEGORIES = {
+const CATEGORIES = {
   calzado: "Calzado",
   celulares: "Celulares",
   electro: "Electrodomésticos",
