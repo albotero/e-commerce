@@ -37,7 +37,7 @@ const populateProductos = (filter = "") => {
       ({ id, title, price, img }) => `
       <div class="product-card">
         <img src="./assets/img/${img}" alt="${title}" class="product-image" />
-        <p class="product-title">${title}</p>
+        <h4 class="product-title">${title}</h4>
         <p class="product-price">COP$ ${price.toLocaleString()}</p>
         <button class="product-buy" value="${id}">Comprar</button>
       </div>`
