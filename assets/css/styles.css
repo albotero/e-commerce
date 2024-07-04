@@ -69,6 +69,10 @@ body {
   flex-grow: 1;
 }
 
+.list-categorias-item:hover {
+  color: var(--bg-tertiary);
+}
+
 .list-categorias-item.selected {
   color: var(--fc-highlight);
 }
@@ -122,6 +126,10 @@ body {
   padding: 0.75rem;
   border: none;
   border-top: 1px solid var(--fc-medium);
+}
+
+.product-buy:hover {
+  background-color: var(--bg-tertiary);
 }
 
 .footer {
