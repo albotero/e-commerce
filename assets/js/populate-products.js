@@ -14,6 +14,9 @@ const populateListCategorias = () => {
       { total: 0 }
     )
   )
+    // Sort categories by name, keeping total first
+    .sort((a, b) => (b[0] === "total" || a[0].toUpperCase() > b[0].toUpperCase() ? 1 : -1))
+    // Convert data to HTML
     .map(([name, count]) => {
       const category = name !== "total" && name
       return `<button class="list-categorias-item" value="${category || ""}">
@@ -24,7 +27,12 @@ const populateListCategorias = () => {
 }
 
 const populateProductos = (filter = "") => {
-  productosDiv.innerHTML = PRODUCTS.filter(({ category }) => !filter || category === filter)
+  productosDiv.innerHTML = PRODUCTS
+    // Apply filter
+    .filter(({ category }) => !filter || category === filter)
+    // Sort products in random order
+    .sort(() => 0.5 - Math.random())
+    // Convert data to HTML
     .map(
       ({ id, title, price, img }) => `
       <div class="product-card">
@@ -45,7 +53,9 @@ const populateProductos = (filter = "") => {
 
 const buyProduct = (productId) => {
   const { title, price } = PRODUCTS.find(({ id }) => id.toString() === productId)
-  alert(`COMPRADO:\n${title}\nPrecio: COP$ ${price.toLocaleString()}`)
+  alert(
+    `¡Oh, oh!\nEl producto ${title} cuesta COP$ ${price.toLocaleString()} y no tienes ni un peso 😔\n¡Mejor suerte para la próxima ✌🏼!`
+  )
 }
 
 document.addEventListener("DOMContentLoaded", () => {
