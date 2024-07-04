@@ -6,6 +6,7 @@
   --fc-light: #f0f1f4;
   --fc-medium: #807e7e;
   --fc-dark: #000;
+  --fc-highlight: #a16909;
   --fs-xl: 2rem;
   --fs-lg: 1.7rem;
   --fs-md: 1.3rem;
@@ -52,10 +53,24 @@ body {
 .list-categorias {
   display: flex;
   flex-direction: column;
+  gap: 0.75rem;
 }
 
 .list-categorias .count {
   color: var(--fc-medium);
+}
+
+.list-categorias-item {
+  background-color: transparent;
+  font-size: var(--fs-sm);
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+.list-categorias-item.selected {
+  color: var(--fc-highlight);
 }
 
 .productos {
